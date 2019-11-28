@@ -9,10 +9,12 @@ package utils;
 import java.io.*;
 
 public class FileUtil {
-
+  
   /** copies a byte array into a file */
-  public static void copyBytes2File(byte[] buffer, String destfilename) {
-    try{      File fout = new File(destfilename);      FileOutputStream fos = new FileOutputStream(fout);
+  public static void copyBytes2File(byte[] buffer, String destfilename) {
+    try{
+      File fout = new File(destfilename);
+      FileOutputStream fos = new FileOutputStream(fout);
       fos.write(buffer,0,buffer.length);
       fos.close();
     }
@@ -90,7 +92,8 @@ public class FileUtil {
         fis.close();
       }
       catch(FileNotFoundException fnfe){
-        System.out.println("Method call error. File: "+ filename + ". Error message:" + fnfe.getMessage());      }
+        System.out.println("Method call error. File: "+ filename + ". Error message:" + fnfe.getMessage());
+      }
       catch(IOException ioe){
         System.out.println("Method call error. File: " + filename + ". Error message:" + ioe.getMessage());
       }
