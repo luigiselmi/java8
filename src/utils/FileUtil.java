@@ -2,10 +2,14 @@
  * File and string utilities.
  * Created on 4 febbraio 2005, 19.24
  * author: Luigi Selmi
- */
-package utils;
-import java.io.*;
-public class FileUtil {
+ */
+
+package utils;
+
+import java.io.*;
+
+public class FileUtil {
+
   /** copies a byte array into a file */
   public static void copyBytes2File(byte[] buffer, String destfilename) {
     try{      File fout = new File(destfilename);      FileOutputStream fos = new FileOutputStream(fout);
@@ -20,7 +24,7 @@ public class FileUtil {
       System.out.println("Class FileUtil, copyBytes2File(..) method call error..");
         ioe.printStackTrace();
     }
-  }
+  }
   /** creates a copy of a file */
   public static void copyFile2File(String sourcefilename, String destfilename) {
     try{
@@ -48,7 +52,7 @@ public class FileUtil {
       System.out.println("Class FileUtil, copyFile2File(..) method call error..");
         ioe.printStackTrace();
     }
-  }
+  }
   /** copies a file into a byte array */
   public static byte[] getBytesFromFile(String filename) {
     byte[] buffer = null;
@@ -68,12 +72,11 @@ public class FileUtil {
       System.out.println("Class FileUtil, getBytesFromFile(..) method call error. " + ioe.getMessage());
     }
     return buffer;
-  }
+  }
   /**
    *copies a file into an InputStream object
    */
   public static InputStream getInputStreamFromFile(String filename) {
-    InputStream is = null;
     File fin = new File(filename);
     InputStream bytearray = null;
     if ( fin.exists() ) {
@@ -94,7 +97,7 @@ public class FileUtil {
     }
     return bytearray;
   }
-  
+
   /** copies an InputStream object into an OutputStream */
   public static void copyInputStream2OutputStream(InputStream in, OutputStream out) {
     DataInputStream buffIn;
@@ -111,7 +114,7 @@ public class FileUtil {
       System.out.println(" method error. " + ioe.getMessage());
     }
   }
-  
+
   /** copies a byte array into an OutputStream object */
   public static void copyBytes2OutputStream(byte[] buffer, BufferedOutputStream bos) {
     try{
@@ -125,7 +128,8 @@ public class FileUtil {
       System.out.println("Class FileUtil, copyBytes2File(..) method call error..");
       ioe.printStackTrace();
     }
-  }
+  }
+  
   /** Replaces string subout with string subin  */
   public static String replacesubstring(String string, 
                                  String subout,
@@ -152,4 +156,4 @@ public class FileUtil {
     }
     return rightstring;
   }
-}
+}
