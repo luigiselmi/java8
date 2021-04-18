@@ -32,19 +32,18 @@ public class Restaurant {
 		restaurant.findVegetarianDish();
 		restaurant.filterDishes();
 		restaurant.groupByType();
+		restaurant.threeHighCaloricDishes();
 	}
 	
 	public void processMenu() {
 		
-		List<String> resulStream = menu.stream()
+		List<String> dishNames = menu.stream()
                 .filter(d -> d.getCalories() < 400)
                 .sorted(comparing(Dish::getCalories))
                 .map(Dish::getName)
                 .collect(toList());
 
-		for(String name: resulStream) {
-			System.out.println(name);
-		}
+		System.out.println(dishNames);
 	}
 	
 	public void printMenu() {	
@@ -63,9 +62,7 @@ public class Restaurant {
 				.distinct()
 				.collect(toList());
 		
-		for(String uniqueChar: uniqueChars) {
-			System.out.println(uniqueChar);
-		}
+		System.out.println(uniqueChars);
 	    
 	}
 	
@@ -76,26 +73,22 @@ public class Restaurant {
 	}
 	
 	public void filterDishes() {
-	  List<String> lowCaloricDishesName = menu.parallelStream()
+	  List<String> lowCaloricDishesNames = menu.parallelStream()
                                       	  .filter(d -> d.getCalories() > 400)
                                       	  .sorted(comparing(Dish::getCalories))
                                       	  .map(Dish::getName)
                                       	  .collect(toList());
 	  
-	  for(String dishName: lowCaloricDishesName) {
-      System.out.println(dishName);
-    }
+    System.out.println(lowCaloricDishesNames);
 	}
-	
+	// use of Optional
 	public void findVegetarianDish() {
-		Optional<Dish> dish = menu.stream()
+		Optional<Dish> vegDishes = menu.stream()
 				.filter(Dish::isVegetarian)
 				.findAny();
 		
-		if(dish.isPresent()) {
-			Dish vegetarianDish = dish.get();
-			System.out.println(vegetarianDish.getName());
-		}
+		if(vegDishes.isPresent()) // the stream contains a dish
+			System.out.println(vegDishes.get().getName());
 		else 
 			System.out.println("There are no vegetarian dishes.");
 	}
@@ -107,6 +100,16 @@ public class Restaurant {
 	  for(Dish.Type type: dishesByType.keySet())
 	    for(Dish dish:  dishesByType.get(type))
 	      System.out.println(type + ": " + dish.getName());
+	}
+	
+	public void threeHighCaloricDishes() {
+	  List<String> threeHighCaloricDishNames =
+	    menu.stream()
+	    .filter(dish -> dish.getCalories() > 300)
+	    .map(Dish::getName)
+	    .limit(3)
+	    .collect(toList());
+	  System.out.println(threeHighCaloricDishNames);
 	}
 
 }
