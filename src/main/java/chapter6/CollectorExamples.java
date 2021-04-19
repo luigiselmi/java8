@@ -88,7 +88,7 @@ public class CollectorExamples {
 				.collect(
 		                groupingBy(Dish::getType, 
 		                		groupingBy(dish -> {
-		                			if (dish.getCalories() <= 400) return CaloricLevel.DIET;
+		                			if (dish. <= 400) return CaloricLevel.DIET;
 		                			else if (dish.getCalories() <= 700) return CaloricLevel.NORMAL;
 		                			else return CaloricLevel.FAT;
 		                		})
