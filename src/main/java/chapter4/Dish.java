@@ -34,5 +34,9 @@ public class Dish {
 		return type;
 	}
 	
+	public String toString() {
+	  return name;
+	}
+	
 	public enum Type { MEAT, FISH, OTHER }
 }
