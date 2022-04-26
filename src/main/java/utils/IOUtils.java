@@ -27,6 +27,14 @@ public class IOUtils {
       
       while (count < n + 1) {
         String line = bufferedReader.readLine().trim();
+        String [] values = line.trim().split(" ");
+        for (String value: values) {
+          System.out.println(value);
+          if (!value.matches("^[1-9][0-9]*$")) {
+            System.err.println("The values in the transactions must contain only characters in the range ascii['0'-'9'] starting with a non-zero digit.");
+            System.exit(1);
+          }
+        }
         logs.add(line);
         count++;
       }
