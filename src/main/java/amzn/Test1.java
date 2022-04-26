@@ -118,6 +118,7 @@ public class Test1 {
 		  if (num_transactions >= threshold)
 			  filteredUsers.add(user);
 	  }
+	  // sort the filtered users by num of transactions
 	  return filteredUsers;
   }
   

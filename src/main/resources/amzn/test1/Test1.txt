@@ -33,7 +33,9 @@ There are two users with at least threshold = 2 transactions: 99 and 88. In asce
 
 Note: in the last log entry, user 12 was on both sides of the transaction. This counts as only one transaction for user 12.
 
-Function description: complete the function processLog() in the editor below.
+Function description
+====================
+Complete the function processLog() in the editor below.
 The function has the following parameter(s):
 
   string logs[n]: each logs[i] denotes the i-th entry in the logs
@@ -42,7 +44,8 @@ The function has the following parameter(s):
   Returns: 
     string[]: an array of user id's as strings sorted ascending by numeric value
 
-Constraints:
+Constraints
+===========
   - 0 <= n <= 10^5
   - 0 <= threshold <= n
   - The sender_user_id, recipient_user_id and amount_of_transaction contain only characters in the range ascii['0'-'9']
@@ -50,13 +53,15 @@ Constraints:
   - 0 < length of sender_user_id, recipient_user_id and amount_of_transaction <= 9
   - The result will contain at least one element
 
-Input format for custom testing:
+Input format for custom testing
+===============================
   Input from stdin will be processed as follows and passed to the function.
   The first line contains the integer, n, the size of logs.
   The following n lines contain a string logs[i]. 
   The last line contains an integer, threshold
   
-Sample case 0:
+Sample case 0
+=============
 Sample input
 
 STDIN     Function
@@ -84,7 +89,8 @@ Only user 1 and 2 have at least threshold = 2 transactions. The return array in 
 Note that in the last log entry, the user with id 2 performed both roles in the transaction. this is counted as one transaction
 for the user.
 
-Sample case 1:
+Sample case 1
+=============
 Sample input
 
 STDIN      Function
