@@ -8,7 +8,17 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class FileSource {
-
+  
+  public long countUniqueWords(String filePath) throws IOException, URISyntaxException {
+    URI uri = getClass().getClassLoader().getResource(filePath).toURI();
+    long numUniqueWords = Files.lines(Paths.get(uri))
+        .flatMap(line -> Arrays.stream(line.split(" ")))
+        .distinct()
+        .count();
+    
+    return numUniqueWords;
+  }
+  
 	public static void main(String[] args) throws IOException, URISyntaxException {
 		String filePath = "data.txt";	
 		FileSource source = new FileSource();
@@ -16,14 +26,4 @@ public class FileSource {
 		System.out.println("Number of unique words in \"" + filePath + "\" = " + count);
 	}
 	
-	public long countUniqueWords(String filePath) throws IOException, URISyntaxException {
-	  URI uri = getClass().getClassLoader().getResource(filePath).toURI();
-		long numUniqueWords = Files.lines(Paths.get(uri))
-				.flatMap(line -> Arrays.stream(line.split(" ")))
-				.distinct()
-				.count();
-		
-		return numUniqueWords;
-	}
-
 }
