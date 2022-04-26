@@ -41,7 +41,9 @@ public class Test1 {
   public int getThreshold() {
 	  return threshold;
   }
-  
+  /*
+   * Reads and validates the input data. 
+   */
   public List<String> readData() {
 	List<String> logs = new ArrayList<String>();
   
@@ -83,7 +85,9 @@ public class Test1 {
     
     return logs;
   }
-  
+  /*
+   * Counts the number of transactions per user.
+   */
   public TreeMap<String, Integer> getUserTransactions(List<String> logs) {
 	  TreeMap<String, Integer> transactions = new TreeMap<String, Integer>();
 	  for (String log: logs) {
@@ -109,7 +113,9 @@ public class Test1 {
 	  }
 	  return transactions;
   }
-  
+  /*
+   * Filters the users whose number of transactions are equal or above the threshold.
+   */
   public List<String> filterUsers(TreeMap<String, Integer> usersTransact, int threshold) {
 	  List<String> filteredUsers = new ArrayList<String>();
 	  Set<String> users = usersTransact.keySet();
@@ -124,15 +130,20 @@ public class Test1 {
   
   public static void main(String[] args) {
 	  Test1 test = new Test1(System.in);
+	  // reads the data
 	  List<String> logs = test.readData();
 	  System.out.println("Number of entries: " + logs.size());
 	  System.out.println("Threshold = " + test.getThreshold());
 	  for (String s: logs) 
 	      System.out.println(s);  
+	  
+	  // counts the number of transactions per user
 	  TreeMap<String, Integer> transactions = test.getUserTransactions(logs);
 	  Set<String> userIds = transactions.keySet();
 	  for (String userId: userIds)
 		  System.out.println(userId);
+	  
+	  // filters the users whose number of transactions are equal or above the threshold
 	  System.out.println("Users abusing the service:");
 	  List<String> users = test.filterUsers(transactions, test.getThreshold());
 	  for (String user: users)
