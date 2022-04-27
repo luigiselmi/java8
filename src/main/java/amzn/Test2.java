@@ -56,16 +56,45 @@ public class Test2 {
 	public void readData() {
 	  Scanner sc=new Scanner(is);
     s = sc.nextLine(); // string containing the items in compartments 
+    if (! validate(s)) {
+      System.err.println("Each character of the string must be either '*' or '|'");
+      System.exit(1);
+    }
     
     int n = sc.nextInt(); // number of start indices
+    if (n < 0 || n > Math.pow(10, 5)) {
+      System.err.println("The number of start indices must be positive and not above 10^5.");
+      System.exit(1);
+    }
     startIndices = new ArrayList<Integer>();
-    for (int i = 0; i < n; i++)
-      startIndices.add(sc.nextInt());
+    for (int i = 0; i < n; i++) {
+      int index = sc.nextInt();
+      startIndices.add(index);
+    }
     
     int m = sc.nextInt(); // number of end indices
+    if (m < 0 || m > Math.pow(10, 5)) {
+      System.err.println("The number of end indices must be positive and not above 10^5.");
+      System.exit(1);
+    }
     endIndices = new ArrayList<Integer>();
-    for (int i = 0; i < m; i++)
-      endIndices.add(sc.nextInt());
+    for (int i = 0; i < m; i++) {
+      int index = sc.nextInt();
+      endIndices.add(index);
+    }
+	}
+	/* 
+	 * Validates the input string. It must contain only '|' or '*' characters.
+	 */
+	private boolean validate(String s) {
+	  boolean valid = true;
+	  for (int i = 0; i < s.length(); i++) {
+	    char c = s.charAt(i); 
+	    if (c != '|' && c != '*') 
+	      valid = false;
+	  }
+	  return valid;
+	  
 	}
 	/*
    * Returns an array with the number of items in each compartments in the string s.
