@@ -91,27 +91,27 @@ for the user.
 
 Sample case 1
 =============
-Sample input
+Sample input  
 
-STDIN      Function
------      --------
-4       -> logs[] size n = 4
-9 7 50  -> logs = ["9 7 50", "22 7 20", "33 7 50", "22 7 30"]
-22 7 20 ->
-33 7 50 ->
-22 7 30 ->
-3       -> threshold = 3
+STDIN      Function  
+-----      --------  
+4       -> logs[] size n = 4  
+9 7 50  -> logs = ["9 7 50", "22 7 20", "33 7 50", "22 7 30"]  
+22 7 20  
+33 7 50  
+22 7 30  
+3       -> threshold = 3  
 
-Sample output:
-7
+Sample output:  
+7  
 
-Explanation:
-ID    Transactions
---    ------------
-9     1
-7     4
-22    2
-33    1
+Explanation:  
+ID    Transactions  
+--    ------------  
+9     1  
+7     4  
+22    2  
+33    1  
 
 
  
