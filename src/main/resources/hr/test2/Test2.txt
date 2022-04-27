@@ -61,7 +61,7 @@ Sample output:
 Explanation:  
 s = *|*|  
 n = 1  
-startIndices = [1]  
+startIndices = [1]
 n = 1  
 startIndices = [3]  
 
