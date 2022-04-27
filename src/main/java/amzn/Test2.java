@@ -50,6 +50,9 @@ public class Test2 {
 	  return endIndices;
 	}
 	
+	/*
+	 * Reads and validates the data from standard input.
+	 */
 	public void readData() {
 	  Scanner sc=new Scanner(is);
     s = sc.nextLine(); // string containing the items in compartments 
@@ -102,6 +105,7 @@ public class Test2 {
     }
 	  return numItemsSubstring;
 	}
+	
 	public void printData() {
 	  System.out.println("String s = " + s);
 	  
