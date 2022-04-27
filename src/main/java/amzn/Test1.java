@@ -45,7 +45,7 @@ public class Test1 {
    * Reads and validates the input data. 
    */
   public List<String> readData() {
-	List<String> logs = new ArrayList<String>();
+    List<String> logs = new ArrayList<String>();
   
     Scanner sc=new Scanner(is);
     n = sc.nextInt();
