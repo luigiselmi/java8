@@ -93,5 +93,3 @@ startIndices = [6]
 The substring from index = 1 to index = 6 is '*|*|*|'.  
 There are two compartments in this string at (index = 2, index = 4) and (index = 4, index = 6).  
 There are two items between these compartments.  
-
-
