@@ -1,4 +1,4 @@
-package amzn.test2;
+package hr.test2;
 
 import java.io.InputStream;
 import java.util.ArrayList;

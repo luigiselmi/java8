@@ -1,4 +1,4 @@
-package amzn.test3;
+package hr.test3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
