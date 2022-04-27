@@ -24,10 +24,10 @@ The transaction count for each user, regardless of role are:
 
 ID  Transactions
 --  ------------
-99  3
-88  2
-12  1
-32  1 
+99  3  
+88  2  
+12  1  
+32  1   
 
 There are two users with at least threshold = 2 transactions: 99 and 88. In ascending order, the return array is ['88', '99'].
 
@@ -66,24 +66,24 @@ Sample input
 
 STDIN     Function
 -----     --------
-4      -> logs[] size n = 4
-1 2 50 -> logs = ["1 2 50", "1 7 70", "1 3 20", "2 2 17"]
-1 7 70 ->
-1 3 20 ->
-2 2 17 ->
-2      -> threshold = 2
+4      -> logs[] size n = 4  
+1 2 50 -> logs = ["1 2 50", "1 7 70", "1 3 20", "2 2 17"]  
+1 7 70    
+1 3 20  
+2 2 17  
+2      -> threshold = 2  
 
-Sample output:
-1
-2
+Sample output:  
+1  
+2  
 
-Explanation:
-ID    Transactions
---    ------------
-1     3
-2     2
-7     1
-3     1
+Explanation:  
+ID    Transactions  
+--    ------------  
+1     3  
+2     2  
+7     1  
+3     1  
 
 Only user 1 and 2 have at least threshold = 2 transactions. The return array in numerically ascending order is ["1", "2"].
 Note that in the last log entry, the user with id 2 performed both roles in the transaction. this is counted as one transaction
