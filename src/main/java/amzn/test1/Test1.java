@@ -4,7 +4,7 @@
  * $ java -cp "target/classes" amzn.Test1 < src/main/resources/amzn/log1.txt
  * 
  */
-package amzn;
+package amzn.test1;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
