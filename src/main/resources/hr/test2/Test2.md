@@ -10,9 +10,9 @@ within the substring between the two indices, inclusive.
 
 Example
 =======
-s='|**|*|*'
-startIndices = [1, 1]
-endIndices = [5, 6]
+s='|**|*|*'  
+startIndices = [1, 1]  
+endIndices = [5, 6]  
 
 The string has a total of two closed compartments, one with two items and one with one item. For the first pair
 of indices, (1, 5), the substring is '|**|*'. There are two items in a compartment.
@@ -25,9 +25,9 @@ Complete the numberOfItems() function in the editor below. The function must ret
 the result for each of the startIndices[i] and endIndices[i] pairs.
 
 numberOfItems() has three parameters:
--s: A string to evaluate
--startIndices: An integer array, the starting indices
--endIndices: An integer array, the ending indices
+-s: A string to evaluate  
+-startIndices: An integer array, the starting indices  
+-endIndices: An integer array, the ending indices  
 
 Constraints
 ===========
@@ -37,61 +37,61 @@ Constraints
 
 Input format for custom testing
 ===============================
-The first line contains a string, s.
-The next line contains an integer, n, the number of elements in startIndices.
-Each line i of the n subsequent lines (where 1 <= i <= n) contains an integer, startIndices[i].
-The next line repeats the integer, n, the number of elements in endIndices.
-Each line i of the n subsequent lines (where  1 <= i <= n) contains an integer, endIndices[i].
+The first line contains a string, s.  
+The next line contains an integer, n, the number of elements in startIndices.  
+Each line i of the n subsequent lines (where 1 <= i <= n) contains an integer, startIndices[i].  
+The next line repeats the integer, n, the number of elements in endIndices.  
+Each line i of the n subsequent lines (where  1 <= i <= n) contains an integer, endIndices[i].  
 
 Sample case 0
 =============
-Sample input for custom testing:
+Sample input for custom testing:  
 
 STDIN      Function
 -----      --------
-*|*|   ->  s = "*|*|"
-1      ->  startIndices[] size n = 1
-1      ->  startIndices = 1
-1      ->  endIndices[]  size n = 1
-3      ->  endIndices = 3
+*|*|   ->  s = "*|*|"  
+1      ->  startIndices[] size n = 1  
+1      ->  startIndices = 1  
+1      ->  endIndices[]  size n = 1  
+3      ->  endIndices = 3  
 
-Sample output:
-0
+Sample output:  
+0  
 
-Explanation:
-s = *|*|
-n = 1
-startIndices = [1]
-n = 1
-startIndices = [3]
+Explanation:  
+s = *|*|  
+n = 1  
+startIndices = [1]  
+n = 1  
+startIndices = [3]  
 
-The substring from index = 1 to index = 3 is '*|*'.
+The substring from index = 1 to index = 3 is '*|*'.  
 There is no compartments in this string. 
 
 Sample case 1
 =============
-Sample input for custom testing:
+Sample input for custom testing:  
 
 STDIN      Function
 -----      --------
-*|*|*| ->  s = "*|*|*|"
-1      ->  startIndices[] size n = 1
-1      ->  startIndices = 1
-1      ->  endIndices[]  size n = 1
-6      ->  endIndices = 6
+*|*|*| ->  s = "*|*|*|"  
+1      ->  startIndices[] size n = 1  
+1      ->  startIndices = 1  
+1      ->  endIndices[]  size n = 1  
+6      ->  endIndices = 6  
 
-Sample output:
-2
+Sample output:  
+2  
 
-Explanation:
-s = *|*|*|
-n = 1
-startIndices = [1]
-n = 1
-startIndices = [6]
+Explanation:  
+s = *|*|*|  
+n = 1  
+startIndices = [1]  
+n = 1  
+startIndices = [6]  
 
-The substring from index = 1 to index = 6 is '*|*|*|'.
-There are two compartments in this string at (index = 2, index = 4) and (index = 4, index = 6).
-There are two items between these compartments. 
+The substring from index = 1 to index = 6 is '*|*|*|'.  
+There are two compartments in this string at (index = 2, index = 4) and (index = 4, index = 6).  
+There are two items between these compartments.  
 
 
