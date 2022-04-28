@@ -2,3 +2,94 @@ Gifting Groups
 ==============
 Source: Hackerrank
 Date: April 28th 2022
+
+At Audible, a subscriber can gift an audiobook from his/her library to any other non-subscriber to kick start their audiobook
+journey. The first time subscriber can receive up to a maximum of N audiobooks from their friends/relatives. When a non-subscriber
+receives an audiobook, we can infer that the two may be related. Similarly, if the non-subscriber receives gifted books from 
+two other subscribers, we can infer that all of them are related and the three of them form a group. More formally, a group is 
+composed of all of the people who know one another, whether directly or transitively. Audible would like your help finding
+out the number of such distinct groups from the input data.
+
+Example
+=======
+Consider the following input matrix M:
+
+110
+110
+001
+
+Every row corresponds to a subscriber and the value M[i][j] determines if j was gifted a book by i. In the above example, user 0
+has gifted a book to user 1 and so they are connected [0][1], while person 2 has not received a book from anyone or gifted book
+to anyone. Therefore, there are two groups.
+
+M[i][j] = 1 if i == j (each of the people is known to self)
+
+Determine the number of groups represented in a matrix.
+
+Note: The method signatures may vary slightly depending on the requirements of the chosen language. For example, C language will
+have an arguments that represents the number of rows and columns in the matrix. Also, Java will receive a list rather than an array.
+
+Function description
+====================
+Complete the function countGroups(). countGroups() has the following parameters:
+ 
+ - int related[n]: an array of strings of binary digits related[i] that represent connections of people
+ 
+Returns:
+ - int: an integer that represents the number of groups of people 
+ 
+Constraints
+===========
+ - 1 <= n <= 300
+ - 0 <= i < n
+ - |related| = n
+ - Each related[i] contains a binary strings of n zeros and ones. related is a square matrix.
+ 
+Input format for custom testing
+===============================
+Input from stdin will be processed as follows and passed to the function. The first line contains an integer n, the size of the
+square association matrix, related. The next n lines each contain a binary string of length n that represents a row in the matrix
+related[i] where 0 <= i <= n.
+
+Sample case 0
+=============
+Sample input:  
+
+STDIN      Function
+-----      --------
+4      ->  size of related[] n = 4
+1100   ->  related = ['1100', '1110', '0110', '0001']
+1110
+0110
+0001
+
+Sample output:  
+2
+
+Explanation
+===========
+Squares highlighting a connection between two people are highlighted in green. Each of the people is known to self, so they are 
+highlighted in gray. There are n = 4 people numbered related[0] through related[3]. There are two pairs who directly know each
+other: (related[0], related[1]) and (related[1], related[2]). Because a relation is transitive, the set of people {related[0],
+related[1], related[2]} is considered a single group. The remaining person, related[3], does not know any other people and is 
+a separate group: {related[3]}. There are a total of 2 groups.  
+
+Sample case 1
+=============
+Sample input: 
+ 
+STDIN       Function
+-----       --------
+5       ->  size of related[] n = 5
+10000   ->  related = ['10000', '01000', '00100', '00010', '00001']
+01000
+00100
+00010
+00001
+
+Sample output: 
+5
+
+Explanation
+===========
+No direct relationships are shown so there are 5 groups: {related[0]}, {related[1]}, {related[2]}, {related[3]}, {related[4]}.
