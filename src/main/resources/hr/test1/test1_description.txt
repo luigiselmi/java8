@@ -1,5 +1,8 @@
 Problem
 =======
+Source: Hackerrank
+Date: April 24th 2022
+
 Your team is responsible for maintaining a monetary transaction service. The transactions are tracked in a log file.
 A log file is provided as a string array where each entry represents a transaction to service. Each transaction consists 
 of:

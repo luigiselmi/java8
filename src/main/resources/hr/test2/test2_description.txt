@@ -1,5 +1,8 @@
-Problem
-=======
+Items in containers
+===================
+Source: Hackerrank
+Date: April 25th 2022
+
 A company would like to know how much inventory exists in their closed inventory compartments. Given a string s
 consisting of items as "*" and closed compartments as an open and close "|", an array of starting indices
 startIndices and an array of ending indices endIndices, determine the number of items in closed compartments
