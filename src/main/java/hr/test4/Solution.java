@@ -24,9 +24,9 @@ public class Solution {
     })
     .collect(Collectors.toList());
     
-    int result = Result.countGroups(related);
-    
     bufferedReader.close();
+    
+    int result = Result.countGroups(related);
     
     System.out.println("Related = " + result);
   
