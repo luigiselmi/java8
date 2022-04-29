@@ -14,6 +14,11 @@ public class Solution {
     
     int relatedCount = Integer.parseInt(bufferedReader.readLine().trim());
     
+    if (relatedCount < 1 || relatedCount > 300) {
+      System.out.println("1 <= n <= 300");
+      System.exit(1);
+    }
+    
     List<String> related = IntStream.range(0, relatedCount).mapToObj(i -> {
       try {
         return bufferedReader.readLine().replaceAll("\\s+$", "");
@@ -26,11 +31,16 @@ public class Solution {
     
     bufferedReader.close();
     
+    //print_data(related);
+    
     int result = Result.countGroups(related);
     
     System.out.println("Related = " + result);
   
-
+  }
+  public static void print_data(List<String> data) {
+    for (String line: data)
+      System.out.println(line);
   }
 
 }
