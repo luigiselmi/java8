@@ -14,7 +14,7 @@ public class Result {
     int [] users_per_group = new int [related.size()]; // an empty group is not a group
     Arrays.fill(users_per_group, 1); // initialize each group with one user
     
-    int count = 0;
+    int count = 0; // line index
     for (String line: related) {
       for (int i = 0; i < line.length(); i++) {
         if (line.charAt(i) == '1' && i != count) {
