@@ -14,22 +14,6 @@ import java.util.TreeMap;
 
 public class Test1 {
   
-  class Result {
-    /*
-     * Complete the 'processLogs' function below.
-     * 
-     * The function is expected to return a STRING_ARRAY.
-     * The function accepts the following parameters:
-     * 1) STRING_ARRAY logs
-     * 2) Integer threshold
-     */
-    public List<String> processLogs(List<String> logs, int threshold) {
-      
-      return null;
-    }
-    
-  }
-  
   private int n;
   private int threshold;
   private InputStream is;

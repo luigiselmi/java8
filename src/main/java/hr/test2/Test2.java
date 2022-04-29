@@ -5,14 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Result {
-  /*
-   * Returns an array with the number of items in each compartments in the string s.
-   */
-	public List<Integer> numberOfItems(String s, List<Integer> startIndices, List<Integer> endIndices) {
-		return null;
-	}
-}
 
 public class Test2 {
   
