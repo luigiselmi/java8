@@ -74,6 +74,7 @@ public class Test2 {
       int index = sc.nextInt();
       endIndices.add(index);
     }
+    sc.close();
 	}
 	/* 
 	 * Validates the input string. It must contain only '|' or '*' characters.
