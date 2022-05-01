@@ -16,7 +16,7 @@ public class Result {
     int page_count_back = 0;
     for (; page_count_back < p;) {
       if (n % 2 == 0) {
-        odd_page = n - 2 * page_count_back - 1;
+        odd_page = n - 2 * page_count_back + 1;
         even_page = n - 2 * page_count_back;
       }
       else {
