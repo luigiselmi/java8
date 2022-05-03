@@ -11,22 +11,17 @@ public class Solution {
    * The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items
    */
   static int getMoneySpent(int[] keyboards, int[] drives, int b) {
-    Arrays.sort(keyboards);
-    keyboards = reverse(keyboards);
-    Arrays.sort(drives);
-    drives = reverse(drives);
-    int cost = 0, temp_cost = 0;
+    int n = keyboards.length;
+    int m = drives.length;
+    int cost = 0;
     
-    for (int i = 0; i < keyboards.length; i++) {
-      if (temp_cost + keyboards[i] < b) {
-        for (int j = 0; j < drives.length; j++) {
+    for (int i = 0; i < n; i++) {
+      if (keyboards[i] < b) {
+        for (int j = 0; j < m; j++) {
           int price = keyboards[i] + drives[j];
-          if (price < b && price > cost) {
+          if (price <= b && price > cost) 
             cost = price;
-            //temp_cost = cost;
-          }
         }
-        temp_cost = 0;
       }
     }
     if (cost > 0)
