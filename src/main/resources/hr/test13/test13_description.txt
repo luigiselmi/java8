@@ -26,8 +26,8 @@ The part of the code that handles input operation is already provided in the edi
 Output Format:
 for each case, print 'true' if the string is balanced, 'false' otherwise.
 
-Sample input
-============
+Sample input 1
+==============
 {}()
 ({()})
 {}(
@@ -37,5 +37,74 @@ Sample output:
 true
 true
 false
+true
+
+Sample input 2
+==============
+({}[])
+(({()})))
+({(){}()})()({(){}()})(){()}
+{}()))(()()({}}{}
+}}}}
+))))
+{{{
+(((
+[]{}(){()}((())){{{}}}{()()}{{}{}}
+[[]][][]
+}{
+
+Sample output:
+
+true
+false
+true
+false
+false
+false
+false
+false
+true
+true
+false
+
+Sample input 3
+==============
+[({})(())]
+(({()})))[[
+({(){}()})()({(){}()})(){()}{}((()))
+{}()))(()()({}}{}
+}}}}
+))))
+{{{
+(((
+{}(){()}((())){{{}}}{()()}{{}{}}
+{{{{{{{)))))))))))))))))))
+{}{}(
+{}}}{}
+()()()())))
+(((((()()()
+(){}{{}}()(()){{()()}}
+{}{{{}}}{{{((()))}}}
+((()))[]
+{{}}(()[])
+
+Sample output:
+true
+false
+true
+false
+false
+false
+false
+false
+true
+false
+false
+false
+false
+false
+true
+true
+true
 true
 
