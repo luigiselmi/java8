@@ -20,4 +20,5 @@ $ java -cp "target/classes" chapter5.FileSource
 ## HackerRank Challenges
 The package hr.* contains tests from [HackerRank](https://www.hackerrank.com/). A description of each test
 is available under the folder hr in src/main/resources with some input data. The solutions may not be fully
-tested so they are just a first attempt to solve a problem.  
+tested so they are just a first attempt to solve a problem. There is an execution time limit of 4 seconds for
+the Java8 code submitted to HackerRank and a memory limit of 512 MB. 
