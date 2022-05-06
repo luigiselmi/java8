@@ -23,7 +23,7 @@ public class Solution {
   // Returns the index of the minimum value in the input array
   static int min_index(int [] a, int start, int max_value) {
     int min_value = max_value;
-    int min_index = 0;
+    int min_index = start;
     for (int i = start; i < a.length; i++) {
       if (a[i] < min_value) {
         min_value = a[i];
@@ -50,12 +50,21 @@ public class Solution {
         arr[i] = arrItem;
     }
     
+    // Test for mean execution time
     int num_test = 10;
+    // array of num_test copies of arr
+    // to be used to compute the mean execution time
+    int [][] test_arr = new int [num_test][n];
+    for (int i = 0; i < num_test; i++)
+      for (int j = 0; j < n; j++)
+        test_arr[i][j] = arr[j];
     double execTime = 0.0;
     int res = 0;
     double startTime = System.currentTimeMillis();
-    for (int i = 0; i < num_test; i++)
-      res += minimumSwaps(arr);
+    for (int i = 0; i < num_test; i++) {
+      int swaps = minimumSwaps(test_arr[i]); 
+      res += swaps;
+    }
     double endtTime = System.currentTimeMillis();
     execTime = (endtTime - startTime) / 1000;
     System.out.println(res / num_test);
