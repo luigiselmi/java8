@@ -26,15 +26,16 @@ public class Result {
     }
     
     boolean all_words = true;
-    for (String note_word: note_words.keySet()) {
-      if (mag_words.containsKey(note_word)) {
-        if ( ! (note_words.get(note_word) == mag_words.get(note_word)))
-          all_words = false;
+    for (String note_word: note_words.keySet()) { 
+      if ( mag_words.containsKey(note_word) ) { 
+          int num_mag_words = mag_words.get(note_word);
+          int num_note_words = note_words.get(note_word);
+          if (num_note_words > num_mag_words)
+            all_words = false; // not enough repeated words
       }
       else
         all_words = false;
     }
-    
     if (all_words)
       System.out.println("Yes");
     else
